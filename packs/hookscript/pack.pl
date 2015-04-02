@@ -1,0 +1,2 @@
+name(hookscript).
+title(hookscript).

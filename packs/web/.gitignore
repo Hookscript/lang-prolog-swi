@@ -1,0 +1,6 @@
+*~
+*.swp
+dev.pl
+doc/
+
+web-*.tgz

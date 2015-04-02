@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# create a saved state
+swipl -q -o compiled -c source 2>>log
+
+# generate an exit code since swipl doesn't provide its own
+if egrep '^ERROR: ' log > /dev/null
+then
+    exit 1
+else
+    exit 0
+fi
