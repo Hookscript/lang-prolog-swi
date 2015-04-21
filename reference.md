@@ -38,11 +38,11 @@ If your script defines `hook/0` then you should assert/retract facts in the `sta
 them retained across script invocations.
 
 Sometimes it's more natural to retain state as a single Prolog value.  In that case, you can define
-hook/2.  The first argument is the state when your script starts.  You should bind the second
+`hook/2`.  The first argument is the state when your script starts.  You should bind the second
 argument to the value that you want stored when your script finishes.
 
 On your script's first invocation (when no state exists), the first argument is an unbound variable. You
-can set a default value with `ignore(X=0)` which binds X if it's unbound but otherwise succeeds silently.
+can set a default value with `ignore(X=0)` which binds `X` if it's unbound but otherwise succeeds silently.
 
 For example,
 
