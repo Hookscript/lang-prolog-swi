@@ -10,7 +10,7 @@ template("
 <html>
 <body>
     <h1>Hello, ~w!</h1>
-    
+
     <form method=GET>
         <input type=submit value='Say Hello to' />
         <input type=text name=whom placeholder='world' />
