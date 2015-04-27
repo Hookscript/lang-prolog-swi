@@ -54,3 +54,6 @@ hook(N0, N) :-
     writeln(N).
 ```
 
+## Modules
+
+A script can use any module in the standard library or any of the [built-in packs](https://github.com/Hookscript/lang-prolog-swi/tree/master/packs).  In the future we hope to support saved state files as scripts.  That way, you can use any modules available on your local machine and just upload the compiled state file for Hookscript to run.
