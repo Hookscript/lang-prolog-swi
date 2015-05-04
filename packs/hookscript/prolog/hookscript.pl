@@ -53,7 +53,8 @@ assert_query(Key=ValueAtom) :-
     req:assert(param(Key, Value)).
 
 is_html_form(Request) :-
-    member(content_type('application/x-www-form-urlencoded'), Request).
+    member(content_type(Type), Request),
+    atomic_list_concat(['application/x-www-form-urlencoded'|_],';',Type).
 
 % these request attributes are not HTTP headers
 special_request_attribute(method(_)).
