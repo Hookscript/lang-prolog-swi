@@ -28,7 +28,7 @@ parse_request :-
 % how do request terms map to request database facts
 assert_request(Request,input(_)) :-
     http_read_data(Request,Body,[]),
-    ( member(content_type('application/x-www-form-urlencoded'), Request) ->
+    ( is_html_form(Request) ->
         assert_request(Request,search(Body))
     ; otherwise ->
         req:assert(body(Body))
@@ -51,6 +51,9 @@ assert_query(Key=ValueAtom) :-
     atom_codes(ValueAtom, ValueCodes),
     name(Value, ValueCodes),
     req:assert(param(Key, Value)).
+
+is_html_form(Request) :-
+    member(content_type('application/x-www-form-urlencoded'), Request).
 
 % these request attributes are not HTTP headers
 special_request_attribute(method(_)).
