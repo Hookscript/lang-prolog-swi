@@ -1,4 +1,4 @@
-FROM mndrix/swipl:7.3.6
+FROM mndrix/swipl:7.3.19
 
 ADD packs /root/lib/swipl/pack
 ADD compile /bin/
